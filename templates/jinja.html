@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{user.username}}'s {{user.bio}}</title>
+</head>
+<body>
+<p1>{{user.bio}}</p1>
+<p1>{{url_for('hello')}}</p1>
+<!--随机生成5段文本 -->
+<p1>{{lipsum(n=1,html=True,min=20,max=100)}} &#9835</p1>
+<img src="{{url_for('static',filename='banner-1.jpg')}}" width="200" height="100">
+<ul>
+    <li>movies的长度{{movies|length}}</li>
+    {% for movie in movies %}
+    <li>{{movie.name}}-{{movie.year}}</li>
+    {%- endfor %}
+    <!-- 如果不在后面加 -,则会在每行输出空行 -->
+</ul>
+</body>
+</html>
