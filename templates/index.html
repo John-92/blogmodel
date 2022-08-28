@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+        <meta charset="UTF-8">
+    <!-- IE将使用最新的引擎渲染网页 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 页面的宽度与设备屏幕的宽度一致
+         初始缩放比例 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>离线引入</title>
+    <!-- 将下载好的Bootstrap文件3.4.1版本复制到项目的当前路径下并引入外部bootstrap的css文件(压缩版) -->
+    <link rel="stylesheet" type="text/css" href="/bootstrap.min.css">
+
+    <style>
+        .row div{
+            border: solid 2px red;
+        }
+        <!--如果屏幕的宽度大于1300px,则container容器的最大宽度是1300px -->
+        @media (min-width: 1300px) {
+            .container{
+                max-width: 1300px;
+            }
+
+            
+        }
+    </style>
 </head>
 <body>
 <p>hello world</p>
+<div class="container" style="height: 100px;border: solid 2px red "></div>
+<!-- container-fluid会填充100%的行宽-->
+<div class="container-fluid" style="height: 50px;border: solid 2px red "></div>
+
+<div class="container" >
+    <div class="row">
+        <!-- col-sm-9 col-12指在小屏幕占有9格，在移动端占有12格-->
+        <div class="col-sm-9 col-12" style="border: none ;padding: 0px">
+            <!--col-12子容器会100%填充父容器宽度 -->
+            <div class="col-12" style="height: 200px;"></div>
+            <div class="col-12" style="height: 200px;"></div>
+            <div class="col-12" style="height: 200px;"></div>
+        </div>
+       <!--border: none表示没有边框，padding-right: 0px表示右内边距宽度为0 -->
+        <div class="col-sm-3 col-12" style="height: 500px;border: none;padding-right: 0">
+            <!--col-12子容器会100%填充父容器宽度 -->
+            <div class="col-12" style="height: 50px;"></div>
+            <div class="col-12" style="height: 300px;"></div>
+
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
