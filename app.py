@@ -22,7 +22,9 @@ def hello_world():
     name=request.args.get('name2','Flask')
     print(name)
     # return f'{name}'
-    return render_template("index.html")
+    # return render_template("index-1.html")
+    # return render_template("text.html")
+    return render_template("post.html")
 
 colors=['white','black','pink']
 @app.route("/test/<any(%s):color>"% str(colors)[1:-1])
